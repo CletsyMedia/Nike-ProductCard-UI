@@ -1,0 +1,279 @@
+@font-face {
+    font-family:'LouiseGeorge';
+    src: url(/Assets/fonts/Louis\ George\ Cafe\ Light.ttf);
+}
+@font-face {
+    font-family:'LouiseGeorgeBold';
+    src: url(/Assets/fonts/Louis\ George\ Cafe\ Bold.ttf);
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+}
+
+:root{
+    --shareBtn:#6C5BEC;
+    --bg:#DFEFF6;
+    --outer-shadow:3px 3px 3px #d0d0d0, -3px -3px 3px #f8f8f8;
+    --outer-shadow-0:0 0 0 #d0d0d0, 0 0 0 #f8f8f8;
+    --inner-shadow: inset 3px 3px 3px #d0d0d0, inset -3px -3px 3px #f8f8f8;  
+}
+.btn{
+    outline: none;
+    border: none;
+    width:50px;
+    height:200px;
+    padding: 10px;
+    background-color: #5f4ee1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:1rem;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    right:1.9rem;
+    top:37%;
+    border-top-right-radius:5px;
+    transition:all .5s ease;
+    border-bottom-right-radius:5px;
+}
+.btn:hover{
+    transform: scale(.99);
+}
+img{
+    width: 100%;
+    display: block;
+}
+body{
+    transition: all .5s linear;
+    background-color:var(--bg);
+}
+main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+section{
+    position: relative;
+    width:45rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-box{
+    width: 35rem;
+    height:20rem;
+    background-color:var(--bg);
+    box-shadow: var(--outer-shadow);
+    border-radius:5px;
+}
+.card-title{
+    display: flex;
+    align-items:flex-start;
+    justify-content:flex-start;
+    flex-direction: column;
+    width:25rem;
+    margin-left:7rem;
+}
+.card-head{
+    position: relative;
+    top: -120%;
+}
+.card-head.active{
+    top: 0;
+}
+.head{
+    margin-top:2.5rem;
+    margin-bottom: 1rem;
+}
+.head h6{
+    color: #6C5BEC;
+    font-size:20px;
+    font-weight:bolder;
+    margin:1rem 0;
+    font-family: 'LouiseGeorgeBold', sans-serif; 
+}
+.head p{
+    font-family: 'LouiseGeorge', sans-serif;
+    font-size:26px;
+    font-weight:lighter;
+}
+.lead{
+    color: #828080;
+    font-size: 14px;
+    line-height: 1.3;
+    margin-bottom:1.5rem;
+}
+.social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1.5rem;
+    z-index: 1000;
+}
+.social i{
+    color:#5f4ee1;
+    font-size:15px;
+}
+.clox{
+    position:absolute;
+    right:1rem;
+    top: .5rem;
+    width:35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:5rem;
+    color: #5f4ee1;
+    box-shadow: var(--inner-shadow);
+    cursor: pointer;
+}
+.clox:hover{
+    box-shadow: var(--outer-shadow);
+    color: white;
+    background-color: #5f4ee1;
+}
+.img{
+    position: absolute;
+    width:400px;
+    top:0%;
+    left:-12.5rem;
+    z-index: 1;
+    filter:drop-shadow(10px 5px 5px rgba(0,0,0,0.25));
+    animation:topBounce 3s ease-in-out infinite;
+}
+.outer-shadow{
+    width:35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:5rem;
+    box-shadow: var(--inner-shadow);
+
+}
+.outer-shadow:hover{
+    background-color: #5f4ee1;
+}
+.outer-shadow:hover i{
+    color:white;
+}
+.inner-shadow{
+    width:35px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:5rem;
+    box-shadow: var(--inner-shadow);
+}
+.hover-in-shadow{
+    position: relative;
+}
+.hover-in-shadow:hover{
+    box-shadow: var(--outer-shadow);
+}
+.hover-in-shadow::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease;
+}
+.hover-in-shadow:hover::after{
+    box-shadow: var(--outer-shadow);
+    border-radius: 5rem;
+}
+ 
+
+
+
+
+
+/* Animations */
+@keyframes topBounce {
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50% {
+        transform:translateY(20px);
+    }
+}
+
+
+
+/* Responsiveness */
+@media only screen and (max-width:768px) {
+    .img{
+        width:350px;
+        left: -10rem;
+    }
+}
+@media only screen and (max-width:426px) {
+    .card-box{
+        width:18rem;
+        height: 30rem;
+    }
+    .card-title{
+        margin: 0;
+        width:100%;
+        height: 100%;
+        padding:3rem 2rem;
+    }
+    .img{
+        top:-24%;
+        width:250px;
+        left:10%;
+    }
+    .btn{
+        right:1.2rem;
+    }
+    .head p{
+        font-size: 24px;
+    }
+}
+@media only screen and (max-width:376px) {
+    .card-box{
+        width:17rem;
+    }
+    .card-title{
+        padding: 3rem 1.7rem;
+    }
+    .btn{
+        right: 1.3rem;
+    }
+    .card-head{
+        margin-right:2.5rem;
+    }
+}
+@media only screen and (max-width:321px) {
+    .card-box{
+        width:16.5rem;
+    }
+    .head p{
+        font-size: 22px;
+    }
+    .btn{
+        width:35px;
+        right:.5rem;
+    }
+    .card-head{
+        margin-right:2rem;
+    }
+}
