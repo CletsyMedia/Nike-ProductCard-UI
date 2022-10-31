@@ -111,6 +111,7 @@ section{
 .head p{
     font-family: 'LouiseGeorge', sans-serif;
     font-size:26px;
+    font-weight: lighter;
 }
 .lead{
     font-family: 'LouiseGeorgeRegular', sans-serif;
@@ -256,7 +257,7 @@ section{
         font-size: 24px;
     }
 }
-@media only screen and (max-width:376px) {
+@media only screen and (max-width:366px) {
     .card-box{
         width:17rem;
     }
