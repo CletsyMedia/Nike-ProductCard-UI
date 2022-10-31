@@ -111,7 +111,6 @@ section{
 .head p{
     font-family: 'LouiseGeorge', sans-serif;
     font-size:26px;
-    font-weight:lighter;
 }
 .lead{
     font-family: 'LouiseGeorgeRegular', sans-serif;
@@ -131,7 +130,10 @@ section{
     color:#5f4ee1;
     font-size:15px;
 }
-.clox{
+.clox a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position:absolute;
     right:1rem;
     top: .5rem;
@@ -144,8 +146,9 @@ section{
     color: #5f4ee1;
     box-shadow: var(--inner-shadow);
     cursor: pointer;
+    z-index: 1000;
 }
-.clox:hover{
+.clox a:hover{
     box-shadow: var(--outer-shadow);
     color: white;
     background-color: #5f4ee1;
@@ -261,15 +264,19 @@ section{
         padding: 3rem 1.7rem;
     }
     .btn{
-        right: 1.3rem;
+        right: 1rem;
     }
     .card-head{
         margin-right:2.5rem;
+    }
+    .card-head{
+        margin-right:2rem;
     }
 }
 @media only screen and (max-width:321px) {
     .card-box{
         width:16.5rem;
+        height:31rem;
     }
     .head p{
         font-size: 22px;
